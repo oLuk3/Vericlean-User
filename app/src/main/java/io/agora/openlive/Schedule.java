@@ -12,8 +12,6 @@ import android.widget.Toast;
 public class Schedule extends AppCompatActivity implements ScheduleFragment.OnFragmentInteractionListener{
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +25,13 @@ public class Schedule extends AppCompatActivity implements ScheduleFragment.OnFr
             fragmentTransaction.add(R.id.schedule_container, fragment);
             fragmentTransaction.commit();
         }
+
     }
+
 
     @Override
     public void onItemSelected(Schedule schedule) {
-        Toast.makeText(this, "Schedule selected: "+schedule, Toast.LENGTH_LONG).show();
-    }
-
-//draft
-    public void getId() {
-    }
-
-    public int getCleaning() {
-    }
-
-    public int getCreated() {
+        Toast.makeText(this, "Schedule Stelected: "+schedule,Toast.LENGTH_LONG).show();
     }
 }
 
