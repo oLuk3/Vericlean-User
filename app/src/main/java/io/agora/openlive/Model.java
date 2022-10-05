@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.agora.openlive.api.APIListener;
-import io.agora.openlive.api.AbstractAPIListener;
 import io.agora.openlive.api.WebAPI;
 import io.agora.openlive.api.API;
 
@@ -16,7 +15,7 @@ public class Model {
 
     private final API mApi;
     private User mUser;
-    private List<Schedule> mSchedule;
+
 
     public static Model getInstance(Application application){
         //change on line 12
@@ -31,7 +30,7 @@ public class Model {
     private Model(Application application) {
         mApplication = application;
         mApi = new WebAPI(mApplication);
-        mSchedule = new ArrayList<>();
+
     }
 
     public Application getApplication(){return mApplication;}
@@ -49,9 +48,9 @@ public class Model {
         this.mUser = user;
     }
 
-    public List<Schedule> getSchedule(){return mSchedule; }
-
-    public void loadSchedule(APIListener listener) {
-        mApi.loadSchedule(listener);
-    }
+//    public List<Schedule> getSchedule(){return mSchedule; }
+//
+//    public void loadSchedule(APIListener listener) {
+//        mApi.loadSchedule(listener);
+//    }
 }
