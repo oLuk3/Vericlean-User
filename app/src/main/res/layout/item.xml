@@ -2,115 +2,195 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_margin="6dp"
     android:id="@+id/main_layout"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:padding="5dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="406dp"
-        android:layout_height="127dp"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/_idTV"
-                android:layout_width="131dp"
-                android:layout_height="17dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/cleaners_assignedTV"
-                android:layout_width="107dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/_idTV"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_rectangle">
 
             <TextView
                 android:id="@+id/cleaning_tasksTV"
-                android:layout_width="118dp"
-                android:layout_height="16dp"
+                android:layout_width="124dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="104dp"
                 android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cleaners_assignedTV"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/task_headTV"
-                android:layout_width="68dp"
-                android:layout_height="18dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/_idTV" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toEndOf="@+id/roomTV"
+                app:layout_constraintTop_toBottomOf="@+id/cleaningtask" />
 
             <TextView
                 android:id="@+id/floorTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginLeft="76dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="40dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/roomTV"
-                app:layout_constraintTop_toBottomOf="@+id/cleaning_tasksTV" />
+                android:textColor="#FAFAFA"
+                app:layout_constraintStart_toEndOf="@+id/floor"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/start_timeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="36dp"
-                android:text="TextView"
+                android:text="10:00am"
+                android:textColor="#F6F6F6"
+                app:layout_constraintEnd_toStartOf="@+id/textView16"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/task_headTV" />
+                app:layout_constraintTop_toBottomOf="@+id/scheduledtime" />
 
             <TextView
                 android:id="@+id/roomTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
-                android:layout_marginLeft="72dp"
-                android:layout_marginTop="12dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/task_headTV"
-                app:layout_constraintTop_toBottomOf="@+id/cleaners_assignedTV" />
+                android:textColor="#FBFBFB"
+                app:layout_constraintStart_toEndOf="@+id/room"
+                app:layout_constraintTop_toBottomOf="@+id/floorTV" />
 
             <TextView
                 android:id="@+id/end_timeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
+                android:layout_marginEnd="120dp"
+                android:text="11:00am"
+                android:textColor="#FDFDFD"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scheduledtime" />
+
+            <TextView
+                android:id="@+id/floor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Floor: "
+                android:textColor="#FFF7F7"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Room: "
+                android:textColor="#FDFDFD"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/floor" />
+
+            <TextView
+                android:id="@+id/timein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Time In: "
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/timeout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowColor="#FFFFFF"
+                android:text="Time Out: "
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/timeOutTV"
+                app:layout_constraintTop_toBottomOf="@+id/cleaning_tasksTV"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/cleaningtask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="4dp"
+                android:shadowColor="#EAEAEA"
+                android:text="Cleaning Task:"
+                android:textColor="#F6F6F6"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/floorTV"
+                app:layout_constraintTop_toBottomOf="@+id/end_timeTV" />
+
+            <TextView
+                android:id="@+id/scheduledtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scheduled Time:"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/timeOutTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:text="No Value"
+                android:textColor="#FBFBFB"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/timeInTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/start_timeTV"
+                android:shadowColor="#FFFFFF"
+                android:text="No Value"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toEndOf="@+id/timein"
                 app:layout_constraintTop_toBottomOf="@+id/roomTV" />
 
             <TextView
-                android:id="@+id/createdAtTV"
+                android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginLeft="76dp"
-                android:layout_marginTop="24dp"
-                android:text="TextView"
+                android:text=" - "
+                android:textColor="#F6F6F6"
+                app:layout_constraintEnd_toStartOf="@+id/end_timeTV"
+                app:layout_constraintTop_toBottomOf="@+id/scheduledtime" />
+
+            <TextView
+                android:id="@+id/_idTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/end_timeTV"
-                app:layout_constraintTop_toBottomOf="@+id/floorTV" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
