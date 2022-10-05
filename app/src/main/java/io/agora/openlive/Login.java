@@ -1,4 +1,4 @@
-package io.agora.openlive;
+  package io.agora.openlive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,10 +38,13 @@ public class Login extends AppCompatActivity {
                             model.setUser(user);
                             Intent intent = new Intent(Login.this, Dashboard.class);
                             startActivity(intent);
+                            Toast.makeText(Login.this, "Login Successful!",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Login.this, "User:" + user.getName()+ " Token: "+user.getToken(),Toast.LENGTH_LONG).show();
+
                         }else{
-                            Toast.makeText(Login.this, "Invalid Login",Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, "Invalid Credentials",Toast.LENGTH_SHORT).show();
                         }
-                        //Toast.makeText(Login.this, "User " + user.getName()+ " has logged in!",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Login.this, "User:" + user.getName()+ " Token: "+user.getToken(),Toast.LENGTH_LONG).show();
                     }
                 });
             }
