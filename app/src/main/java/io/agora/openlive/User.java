@@ -5,6 +5,8 @@ import org.json.JSONObject;
 
 public class User {
 
+    private static String token;
+
     public static User getUser(JSONObject jsonObject) throws JSONException{
         String name = jsonObject.getString("name");
         String email = jsonObject.getString("email");
@@ -16,7 +18,7 @@ public class User {
 
     private String name;
     private String email;
-    private String token;
+    //private String token;
 
     public User(String name, String email, String token){
         this.name  = name;
@@ -34,7 +36,7 @@ public class User {
 
     public void setEmail(String email) {this.email = email;}
 
-    public String getToken(){return token;}
+    public static String getToken(){return token;}
 
     public void setToken(String token) {this.token = token;}
 
