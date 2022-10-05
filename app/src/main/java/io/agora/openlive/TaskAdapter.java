@@ -12,7 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
 
@@ -35,15 +43,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
 
         Task task = taskList.get(position);
-        holder._id.setText(task.get_id());
-        holder.cleaners_assigned.setText(task.getCleaners_assigned());
+        //holder._id.setText(task.get_id());
+        //holder.cleaners_assigned.setText(task.getCleaners_assigned());
         holder.cleaning_tasks.setText(task.getCleaning_tasks());
-        holder.task_head.setText(task.getTask_head());
+       // holder.task_head.setText(task.getTask_head());
         holder.room.setText(task.getRoom());
         holder.floor.setText(task.getFloor());
         holder.start_time.setText(task.getStart_time());
         holder.end_time.setText(task.getEnd_time());
-        holder.createdAt.setText(task.getCreatedAt());
+
 
 
 
@@ -54,18 +62,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
 
                 Bundle bundle = new Bundle();
                 bundle.putString("_id" , task.get_id());
-                bundle.putString("cleaners_assigned" , task.getCleaners_assigned());
+               // bundle.putString("cleaners_assigned" , task.getCleaners_assigned());
                 bundle.putString("cleaning_tasks" , task.getCleaning_tasks());
-                bundle.putString("task_head" , task.getTask_head());
+               // bundle.putString("task_head" , task.getTask_head());
                 bundle.putString("room" , task.getRoom());
                 bundle.putString("floor" , task.getFloor());
                 bundle.putString("start_time" , task.getStart_time());
                 bundle.putString("end_time" , task.getEnd_time());
-                bundle.putString("createdAt" , task.getCreatedAt());
+
 
 
                 intent.putExtras(bundle);
-
                 context.startActivity(intent);
             }
         });
@@ -79,22 +86,26 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
 
     public class TaskHolder extends RecyclerView.ViewHolder{
 
-
-        TextView _id , cleaners_assigned , cleaning_tasks, task_head,room,floor,start_time,end_time,createdAt;
+//id, cleaners_assigned,task_head
+        TextView cleaning_tasks, room,floor,start_time,end_time;
         ConstraintLayout constraintLayout;
 
         public TaskHolder(@NonNull View itemView) {
             super(itemView);
 
-            _id = itemView.findViewById(R.id._idTV);
-            cleaners_assigned = itemView.findViewById(R.id.cleaners_assignedTV);
+           // _id = itemView.findViewById(R.id._idTV);
+//            cleaners_assigned = itemView.findViewById(R.id.cleaners_assignedTV);
             cleaning_tasks = itemView.findViewById(R.id.cleaning_tasksTV);
-            task_head = itemView.findViewById(R.id.task_headTV);
+            //task_head = itemView.findViewById(R.id.task_headTV);
             room = itemView.findViewById(R.id.roomTV);
             floor = itemView.findViewById(R.id.floorTV);
+
             start_time = itemView.findViewById(R.id.start_timeTV);
             end_time = itemView.findViewById(R.id.end_timeTV);
-            createdAt = itemView.findViewById(R.id.createdAtTV);
+
+
+
+
 
             constraintLayout = itemView.findViewById(R.id.main_layout);
         }

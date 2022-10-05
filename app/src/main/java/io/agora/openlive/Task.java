@@ -1,22 +1,50 @@
 package io.agora.openlive;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
+import java.util.Locale;
+
 public class Task {
-    private String _id , cleaners_assigned , cleaning_tasks, task_head,room,floor,start_time,end_time,createdAt;
+
+    private String _id , cleaners_assigned , cleaning_tasks, task_head,room,floor,start_time,end_time;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Task(String cleaning_tasks, String room, String floor,
+                String start_time, String end_time, String _id){
 
-    public Task(String _id , String cleaners_assigned , String cleaning_tasks, String task_head, String room, String floor,
-                String start_time, String end_time, String createdAt){
+        String starttimeLocal =
+                Instant.parse (start_time)
+                        .atZone( ZoneId.of ( "Asia/Manila" ) )
+                        .format(
+                                DateTimeFormatter.ofLocalizedDateTime ( FormatStyle.FULL )
+                                        .withLocale ( Locale.US ).ofPattern("h:mm a"));
 
-        this._id = _id;
-        this.cleaners_assigned = cleaners_assigned;
+        String endtimeLocal =
+                Instant.parse (end_time)
+                        .atZone( ZoneId.of ( "Asia/Manila" ) )
+                        .format(
+                                DateTimeFormatter.ofLocalizedDateTime ( FormatStyle.FULL )
+                                        .withLocale ( Locale.US ).ofPattern("h:mm a"));
+
+         this._id = _id;
+       // this.cleaners_assigned = cleaners_assigned;
         this.cleaning_tasks = cleaning_tasks;
-        this.task_head = task_head;
+       // this.task_head = task_head;
         this.room = room;
         this.floor = floor;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.createdAt = createdAt;
+        this.start_time = starttimeLocal;
+        this.end_time = endtimeLocal;
+
+
+
 
     }
 
@@ -52,8 +80,5 @@ public class Task {
         return end_time;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
 
 }
