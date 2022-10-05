@@ -7,12 +7,369 @@
     tools:context=".DetailActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="333dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:srcCompat="@drawable/rounded_rectangle" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="72dp"
+        android:text="Scheduled Task"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <TextView
+        android:id="@+id/cleaning_tasksD"
+        android:layout_width="119dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="36dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/roomD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#FFFFFF"
+        android:text="TextView"
+        android:textColor="#FBFBFB"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/floorD" />
+
+    <TextView
+        android:id="@+id/floorD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        android:textColor="#F6F6F6"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/start_timeD" />
+
+    <TextView
+        android:id="@+id/start_timeD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00am"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/end_timeD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:shadowColor="#FFFFFF"
+        android:text="11:00am"
+        android:textColor="#F6F6F6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="47dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/calendar2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:shadowColor="#F6F6F6"
+        android:text="Room: "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Floor: "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/start_timeD" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scheduled Time:"
+        android:textColor="#FBFBFB"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:text="Cleaning Task:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/floorD"
+        app:layout_constraintTop_toBottomOf="@+id/end_timeD" />
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="detail"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:shadowColor="#EFEFEF"
+        android:text="Time In: "
+        android:textColor="#FDFDFD"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:shadowColor="#EFEFEF"
+        android:text="Time Out: "
+        android:textColor="#FDFDFD"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/timeOutTVD"
+        app:layout_constraintTop_toBottomOf="@+id/cleaning_tasksD" />
+
+    <TextView
+        android:id="@+id/timeOutTVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="              "
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/cleaning_tasksD" />
+
+    <TextView
+        android:id="@+id/timeInTVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/roomD" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="337dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:srcCompat="@drawable/rounded_rectangle2" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:text="Scan Time Out"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:shadowColor="#FFFFFF"
+        android:text="Scan Time In"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+    <Button
+        android:id="@+id/scanTimeOut"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/scanner"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <Button
+        android:id="@+id/scanTimeIn"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/scanner"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="335dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:srcCompat="@drawable/rounded_rectangle" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="69dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:srcCompat="@drawable/live2" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="60dp"
+        android:text="Start Live Broadcast"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="337dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/rounded_rectangle2" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="104dp"
+        android:text="Feedback"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Scan QR"
+        android:textColor="#020202"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <Button
+        android:id="@+id/liveBtn2"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:background="@drawable/start2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="57dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:srcCompat="@drawable/qrcodescan" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="43dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/pencil" />
+
+    <TextView
+        android:id="@+id/getTimeinScanQr"
+        android:layout_width="13dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/end_timeD"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/_idD"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/scanTimeIn"
+        app:layout_constraintTop_toBottomOf="@+id/getTimeinScanQr" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
