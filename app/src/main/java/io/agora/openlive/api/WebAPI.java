@@ -7,13 +7,20 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import io.agora.openlive.Model;
+import io.agora.openlive.Schedule;
 import io.agora.openlive.User;
 
 public class WebAPI implements API {
@@ -23,6 +30,8 @@ public class WebAPI implements API {
     private final Application mApplication;
 
     private RequestQueue mRequestQueue;
+    private Model mModel;
+
 
     public WebAPI(Application application) {
         mApplication = application;
@@ -56,7 +65,7 @@ public class WebAPI implements API {
             Response.ErrorListener errorListener = new Response.ErrorListener(){
                 @Override
                 public void onErrorResponse(VolleyError error){
-                    Toast.makeText(mApplication, "Error response", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mApplication, "Invalid Credentials", Toast.LENGTH_LONG).show();
                 }
             };
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonObject, successListener, errorListener);
@@ -66,11 +75,6 @@ public class WebAPI implements API {
         }
 
 
-    }
-
-    @Override
-    public void loadSchedule(APIListener listener) {
-        String url = BASE_URL + "/api/tasks";
     }
 
 
